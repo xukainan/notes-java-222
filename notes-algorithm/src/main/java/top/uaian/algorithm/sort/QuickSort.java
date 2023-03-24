@@ -12,35 +12,39 @@ public class QuickSort {
         }
     }
 
-    private static void QuickSortMethod(int[] arr, int start , int end) {
-        //start > end 结束所有递归循环
-        if(start > end){
+    private static void QuickSortMethod(int[] arr, int start, int end) {
+        int standard, left, right;
+
+        //结束所有的子序列递归
+        if(end < start){
             return;
         }
 
-        //left, right用来传递给递归方法开始和结束，因为如果使用start,end。（start,end）在执行完第一轮递归以后值会改变，导致第二轮不准确
-        int left = start, right = end;
-        int standard = arr[start];
+        //标准值
+        standard = arr[start];
+        left = start;
+        right = end;
 
-        //right > left 一个基准数的比较已经完成
+        //按照标准值进行一趟排序
         while (left < right){
-            //必须从右往左
-            //首先从基准数开始， 从右往左找到一个数，与基准数交换
-            //必须<= 否则遇到相同的数就死循环了
             while (arr[right] >= standard && left < right){
-                right --;
+                right--;
             }
             arr[left] = arr[right];
-            //从左往右找到符合条件的数，放到right上，之前right的数已经放到left上
             while (arr[left] <= standard && left < right){
-                left ++;
+                left++;
             }
             arr[right] = arr[left];
         }
-        //最后把基准数放到中间位置
+
+        //排序完成后，所在的中间位置为标准值，前面位置都小于标准值，后面位置都大于标准值
+        //第一趟排序完：[6, 1, 2, 4, 3, 4, 5, 7, 13, 10, 8, 13]
         arr[right] = standard;
 
+
+        //递归所有的子序列
         QuickSortMethod(arr, start, right - 1);
         QuickSortMethod(arr, right + 1, end);
+
     }
 }

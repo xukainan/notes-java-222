@@ -1,6 +1,5 @@
 package top.uaian.algorithm.sort;
 
-
 import top.uaian.utils.ArrayUtils;
 
 /**
@@ -21,8 +20,8 @@ public class BubbleSort {
         for (int i = 0; i < len - 2; i++) {
             //未排好序的部分依次冒泡
             for (int j = len - 1; j > i; j--) {
-                if(arr[j] < arr[j - 1]){
-                    ArrayUtils.swap(arr, j, j - 1);
+                if(arr[j] < arr[j-1]){
+                    ArrayUtils.swap(arr, j, j-1);
                 }
             }
         }
