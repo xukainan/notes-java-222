@@ -1,6 +1,7 @@
 package top.uaian.algorithm.leecode;
 
 import top.uaian.model.algorithm.ListNode;
+import top.uaian.utils.ListUtils;
 
 public class ReverseLinkedList {
 
@@ -11,6 +12,7 @@ public class ReverseLinkedList {
         ListNode listNode3 = new ListNode(9, listNode2);
         ListNode head = new ListNode(1, listNode3);
         reverseList(head);
+        System.out.println(head);
     }
 
 
