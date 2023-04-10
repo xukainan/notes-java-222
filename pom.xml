@@ -33,6 +33,7 @@
         <module>notes-utils</module>
         <module>notes-model</module>
         <module>notes-dubbo</module>
+        <module>notes-aws</module>
     </modules>
 
 </project>
